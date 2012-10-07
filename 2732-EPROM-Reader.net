@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Sat 06 Oct 2012 08:50:59 PM EEST
+# EESchema Netlist Version 1.1 created  Sun 07 Oct 2012 09:41:44 PM EEST
 (
  ( /506C7192 $noname  U2 2732 {Lib=2732}
   (    1 /A7 )
@@ -74,6 +74,14 @@
   (   15 /A10 )
   (   16 VCC )
  )
+ ( /5071CCD9 $noname  C2 100nF {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
+ ( /5071CD6A $noname  C1 100nF {Lib=C}
+  (    1 VCC )
+  (    2 GND )
+ )
 )
 *
 { Allowed footprints by component:
@@ -81,88 +89,102 @@ $component U1
  28DIP-ELL600
  28dip600
 $endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 6 "GND" "GND"
- U1 8
- U2 18
- U1 22
+Net 1 "GND" "GND"
+ C1 2
  U3 8
+ C2 2
  U2 12
-Net 7 "VCC" "VCC"
+ U1 22
+ U2 18
+ U1 8
+Net 2 "VCC" "VCC"
  U2 24
- U1 20
- U1 7
+ C1 1
+ C2 1
  U3 16
-Net 16 "/PIN_D11" "PIN_D11"
- U2 13
- U1 17
-Net 17 "/PIN_A0" "PIN_A0"
- U2 14
- U1 23
-Net 18 "/PIN_A1" "PIN_A1"
- U1 24
- U2 15
-Net 19 "/PIN_A2" "PIN_A2"
- U1 25
- U2 16
-Net 20 "/PIN_A3" "PIN_A3"
- U1 26
+ U1 7
+ U1 20
+Net 3 "/PIN_A3" "PIN_A3"
  U2 17
-Net 21 "/ADDR_CLK" "ADDR_CLK"
- U1 12
+ U1 26
+Net 4 "/ADDR_CLK" "ADDR_CLK"
  U3 10
-Net 22 "/ADDR_RESET" "ADDR_RESET"
+ U1 12
+Net 5 "/ADDR_RESET" "ADDR_RESET"
  U3 11
  U1 13
-Net 23 "/~EPROM_OUT_EN" "~EPROM_OUT_EN"
- U2 20
+Net 12 "/~EPROM_OUT_EN" "~EPROM_OUT_EN"
  U1 11
-Net 24 "/A0" "A0"
- U2 8
- U3 9
-Net 25 "/A6" "A6"
- U2 2
- U3 4
-Net 26 "/A5" "A5"
- U3 2
- U2 3
-Net 27 "/A4" "A4"
- U3 3
- U2 4
-Net 28 "/A3" "A3"
- U3 5
- U2 5
-Net 29 "/A2" "A2"
- U3 6
- U2 6
-Net 30 "/A1" "A1"
- U3 7
- U2 7
-Net 31 "/PIN_D8" "PIN_D8"
- U2 9
- U1 14
-Net 32 "/PIN_D9" "PIN_D9"
- U1 15
- U2 10
-Net 33 "/PIN_D10" "PIN_D10"
- U2 11
- U1 16
-Net 34 "/A11" "A11"
- U2 21
- U3 1
-Net 35 "/A8" "A8"
- U2 23
- U3 12
-Net 36 "/A7" "A7"
- U3 13
- U2 1
-Net 37 "/A9" "A9"
- U3 14
- U2 22
-Net 38 "/A10" "A10"
+ U2 20
+Net 20 "/A10" "A10"
  U2 19
  U3 15
+Net 21 "/PIN_D8" "PIN_D8"
+ U2 9
+ U1 14
+Net 22 "/A7" "A7"
+ U2 1
+ U3 13
+Net 23 "/A6" "A6"
+ U2 2
+ U3 4
+Net 24 "/A5" "A5"
+ U2 3
+ U3 2
+Net 25 "/A4" "A4"
+ U3 3
+ U2 4
+Net 26 "/A3" "A3"
+ U3 5
+ U2 5
+Net 27 "/A2" "A2"
+ U2 6
+ U3 6
+Net 28 "/A1" "A1"
+ U2 7
+ U3 7
+Net 29 "/A0" "A0"
+ U2 8
+ U3 9
+Net 30 "/PIN_D9" "PIN_D9"
+ U1 15
+ U2 10
+Net 31 "/PIN_D10" "PIN_D10"
+ U1 16
+ U2 11
+Net 32 "/A11" "A11"
+ U3 1
+ U2 21
+Net 33 "/A9" "A9"
+ U3 14
+ U2 22
+Net 34 "/PIN_D11" "PIN_D11"
+ U1 17
+ U2 13
+Net 35 "/A8" "A8"
+ U3 12
+ U2 23
+Net 36 "/PIN_A0" "PIN_A0"
+ U1 23
+ U2 14
+Net 37 "/PIN_A1" "PIN_A1"
+ U1 24
+ U2 15
+Net 38 "/PIN_A2" "PIN_A2"
+ U1 25
+ U2 16
 }
 #End

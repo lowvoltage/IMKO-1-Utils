@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sat 06 Oct 2012 08:50:57 PM EEST
+EESchema Schematic File Version 2  date Sun 07 Oct 2012 09:41:09 PM EEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "6 oct 2012"
+Date "7 oct 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -308,4 +308,66 @@ Text Label 8250 4300 0    60   ~ 0
 A10
 Text Label 8250 4400 0    60   ~ 0
 A11
+$Comp
+L C C2
+U 1 1 5071CCD9
+P 10050 4350
+F 0 "C2" H 10100 4450 50  0000 L CNN
+F 1 "100nF" H 10100 4250 50  0000 L CNN
+	1    10050 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 5071CCE6
+P 10050 4100
+F 0 "#PWR?" H 10050 4200 30  0001 C CNN
+F 1 "VCC" H 10050 4200 30  0000 C CNN
+	1    10050 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5071CCEC
+P 10050 4600
+F 0 "#PWR?" H 10050 4600 30  0001 C CNN
+F 1 "GND" H 10050 4530 30  0001 C CNN
+	1    10050 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10050 4600 10050 4550
+Wire Wire Line
+	10050 4150 10050 4100
+$Comp
+L C C1
+U 1 1 5071CD6A
+P 6650 4650
+F 0 "C1" H 6700 4750 50  0000 L CNN
+F 1 "100nF" H 6700 4550 50  0000 L CNN
+	1    6650 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 5071CD70
+P 6650 4400
+F 0 "#PWR?" H 6650 4500 30  0001 C CNN
+F 1 "VCC" H 6650 4500 30  0000 C CNN
+	1    6650 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5071CD76
+P 6650 4900
+F 0 "#PWR?" H 6650 4900 30  0001 C CNN
+F 1 "GND" H 6650 4830 30  0001 C CNN
+	1    6650 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 4900 6650 4850
+Wire Wire Line
+	6650 4450 6650 4400
 $EndSCHEMATC
