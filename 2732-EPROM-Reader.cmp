@@ -1,0 +1,24 @@
+Cmp-Mod V01 Created by CvPcb (2011-nov-30)-testing date = Wed 03 Oct 2012 10:06:44 PM EEST
+
+BeginCmp
+TimeStamp = /506C71AF;
+Reference = U1;
+ValeurCmp = ATMEGA328P-P;
+IdModule  = DIP-28__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /506C7192;
+Reference = U2;
+ValeurCmp = 2732;
+IdModule  = DIP-24__600;
+EndCmp
+
+BeginCmp
+TimeStamp = /506C71C8;
+Reference = U3;
+ValeurCmp = 4040;
+IdModule  = DIP-16__300;
+EndCmp
+
+EndListe

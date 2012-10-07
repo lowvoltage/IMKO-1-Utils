@@ -1,20 +1,41 @@
 #include <EEPROM.h>
-
-
 #include "ihex.h"
+
+#define EPROM_EN 5
+#define ADDR_CLK 6
+#define ADDR_RESET 7
+
+#define MAX_ADDRESS 4096
 
 void setup()
 {
   // TODO: Setup two pins to control 4040: Outputs, high
-  // TODO: Setup a single pin to control the 2732 OutputEnable, high
+  pinMode(ADDR_CLK, OUTPUT);
+  digitalWrite(ADDR_CLK, HIGH);
+  pinMode(ADDR_RESET, OUTPUT);
+  digitalWrite(ADDR_RESET, HIGH);
+  
+  // TODO: Setup a single pin to control the 2732 ~OutputEnable, high
+  pinMode(EPROM_EN, OUTPUT);
+  digitalWrite(EPROM_EN, HIGH);
+
   // TODO: Setup the lower 4-bits of PORTB and PORTC as inputs
+  DDRB &= ~(0x0F);
+  DDRC &= ~(0x0F);
+  
   pinMode(13, OUTPUT);
+  digitalWrite(13, LOW);
+
   Serial.begin(9600);
+  
+  // Cooldown period. Bring up a serial console.
+  delay(5000);
 
   // TODO: Disable 4040.RESET - bring it LOW
+  digitalWrite(ADDR_RESET, LOW);
 
   uint16_t addr = 0;
-  while (addr < 1024)
+  while (addr < MAX_ADDRESS)
   {
     IHexRecord record;
     record.address = addr;
@@ -43,7 +64,9 @@ void setup()
       // TODO: Assert the clock is HIGH
       // TODO: Bring the clock LOW
       delay(1);
+      digitalWrite(ADDR_CLK, LOW);
       // TODO: Bring the clock HIGH
+      digitalWrite(ADDR_CLK, HIGH);
       delay(1);
 
       addr++;
@@ -54,6 +77,7 @@ void setup()
   }
 
   // TODO: Enable 4040.RESET - bring it HIGH
+  digitalWrite(ADDR_RESET, HIGH);
 
   Serial.println(":00000001FF");
 }
@@ -61,12 +85,14 @@ void setup()
 uint8_t readEpromByte()
 {
   // TODO: Enable 2732's output
+  digitalWrite(EPROM_EN, LOW);
   delay(1);
 
   // EPROM's output is now valid, read it
   uint8_t epromByte = (PINB & 0x0F) | (PINC << 4);
 
   // TODO: Disable 2732's output
+  digitalWrite(EPROM_EN, HIGH);
   delay(1);
 
   return epromByte;
