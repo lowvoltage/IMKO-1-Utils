@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0  Date: Tue 21 May 2013 09:38:53 PM EEST
+#
+$CMP 2114
+D 4096-bit (1024-word by 4-bit) Static RAM
+K SRAM
+$ENDCMP
+#
+#End Doc Library
