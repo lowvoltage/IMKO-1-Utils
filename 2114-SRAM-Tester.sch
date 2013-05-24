@@ -35,9 +35,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "IMKO-1 Utilities"
+Title "Functionality tester for 2114 SRAM chips"
 Date "24 may 2013"
-Rev "0.1"
+Rev "1.0"
 Comp "Released under the Creative Commons Attribution Share-Alike 3.0"
 Comment1 "Schematic and PCB capture by Dimitar Kovachev"
 Comment2 ""
